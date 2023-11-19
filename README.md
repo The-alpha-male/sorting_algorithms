@@ -1,3 +1,3 @@
 ## sorting_algorithms
 
-Sorting_algorithms and Big-O notation
+Sorting_algorithms and Big-O notation in C

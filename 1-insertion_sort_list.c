@@ -1,22 +1,23 @@
 #include "sort.h"
 
 /**
- * insertion_sort_list - sorts doubly linked list of integers
- * @list: double linked list
+ * insertion_sort_list - sorts a doubly linked list of integers
+ * in ascending order using the Insertion sort algorithm
+ * @list: double linked llist
  */
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *curr, *prevprev, *precc, *curr1, *currnext;
+	listint_t *curr, *prevprev, *prevv, *curr1, *currnext;
 
 	if (list == NULL)
 		return;
 
-	curr - *list;
+	curr = *list;
 
 	while (curr)
 	{
-		if (curr->prev && curr->prev->n > curr->)
+		if (curr->prev && curr->prev->n > curr->n)
 		{
 			/*Store the necessary pointers for swapping*/
 			prevprev = curr->prev->prev;
@@ -42,7 +43,7 @@ void insertion_sort_list(listint_t **list)
 			prevv->prev = curr1;
 			curr = *list;
 			print_list(*list);
-			continue;
+			continue; /*Continue to the next iteration*/
 		}
 		else
 			curr = curr->next;

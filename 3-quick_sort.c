@@ -1,9 +1,9 @@
 #include "sort.h"
 
 /**
- * swap_inr - swaps 2 elements in an array
- * @a: 1st element
- * @b: 2nd element
+ * swap_int - swaps two elements in an array
+ * @a: the first element
+ * @b: the second element
  */
 
 void swap_int(int *a, int *b)
@@ -25,7 +25,6 @@ void swap_int(int *a, int *b)
  * Description: all values must be accurate
  * Return: new index position
  */
-
 int lomuto_partition(int *array, size_t size, int l, int h)
 {
 	int pivot = array[h], i = l, j;
@@ -65,9 +64,9 @@ void lomuto_sort(int *array, size_t size, int l, int h)
 
 	if (l < h)
 	{
-		i = lumoto_partition(array, size, l, h);
-		lumoto_sort(array, size, l, i - 1);
-		lumoto_sort(array, size, i + 1, h);
+		i = lomuto_partition(array, size, l, h);
+		lomuto_sort(array, size, l, i - 1);
+		lomuto_sort(array, size, i + 1, h);
 	}
 }
 

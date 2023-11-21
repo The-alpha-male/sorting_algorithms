@@ -3,6 +3,32 @@
 #include "sort.h"
 
 /**
+ * swap_nodes - swaps two nodes in a doubly linked list
+ * @node1: first node
+ * @node2: second node
+ * @list: doubly linked list
+ *
+ * Return: void
+ */
+listint_t *swap_node(listint_t *node, listint_t **list)
+{
+    listint_t *tmp;
+
+    tmp = node->next;
+    node->next = tmp->next;
+    tmp->next = node;
+    tmp->prev = node->prev;
+    node->prev = tmp;
+    if (tmp->prev != NULL)
+        tmp->prev->next = tmp;
+    if (node->next != NULL)
+        node->next->prev = node;
+    if (tmp->prev == NULL)
+        *list = tmp;
+    return (tmp);
+}
+
+/**
  * cocktail_sort_list - sorts a doubly linked list of integers in ascending
  * order using the Cocktail shaker sort algorithm
  * @list: doubly linked list to sort

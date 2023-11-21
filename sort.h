@@ -36,5 +36,5 @@ void print_array(const int *array, size_t size);
 void swap_int(int *a, int *b);
 int lomuto_partition(int *array, size_t size, int l, int h);
 listint_t *swap_node(listint_t *node, listint_t **list);
-
+void cocktail_sort_list(listint_t **list);
 #endif /* SORT_H */
